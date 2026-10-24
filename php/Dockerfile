@@ -24,14 +24,6 @@ RUN set -eux; \
     docker-php-source delete
 
 # 其他扩展
-COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
-
-ARG EXT_IMAGICK=3.8.1
-ARG EXT_REDIS=6.2.0
-ARG EXT_YAF=3.3.8
-ARG EXT_YAC=3.0.1
-RUN install-php-extensions redis-${EXT_REDIS} imagick-${EXT_IMAGICK} yaf-${EXT_YAF} yac-${EXT_YAC}
-
 ARG REDIS_EXT=phpredis/phpredis:6.3.0
 ARG IMAGICK_EXT=imagick/imagick:3.8.1
 ARG YAF_EXT=laruence/yaf:^3.3.8
