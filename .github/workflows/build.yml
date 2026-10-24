@@ -32,6 +32,6 @@ jobs:
         with:
           push: true
           context: ${{ github.workspace }}/${{ github.event.inputs.context }}
-          tags: ${{ github.event.inputs.push-tag }}
+          tags: ${{ vars.DOCKERHUB_URL }}/${{ github.event.inputs.push-tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
